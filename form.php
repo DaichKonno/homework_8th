@@ -59,12 +59,26 @@ $places = array(
                    緑の階段はとても良い所です。緑の階段はとても良い所です。',
       'image'  => 'place_1.jpg',
     ),
+     array(
+      'name'=>'　',
+      'detail'=>'　',
+    ),
+    array(
+      'name'=>'　',
+    ),
     array(
       'name'   => '雷門',
       'detail' => '雷門はとても良い所です。雷門はとても良い所です。雷門はとても良い所です。
                    雷門はとても良い所です。雷門はとても良い所です。雷門はとても良い所です。
                    雷門はとても良い所です。雷門はとても良い所です。',
       'image'  => 'place_6.jpg',
+    ),
+     array(
+      'name'=>'　',
+      'detail'=>'　',
+    ),
+    array(
+      'name'=>'　',
     ),
     array(
       'name'   => '東京タワー',
@@ -85,6 +99,13 @@ $places = array(
                    日本の城はとても良い所です。日本の城はとても良い所です。
                    日本の城はとても良い所です。日本の城はとても良い所です。',
       'image'  => 'place_2.jpg',
+    ),
+    array(
+      'name'=>'　',
+      'detail'=>'　',
+    ),
+    array(
+      'name'=>'　',
     ),
     array(
       'name'   => '旅館の部屋',
@@ -139,7 +160,7 @@ $count = count($places[$pref]);
     <form class="form-inline" action="form.php" method="post">
       <div class="form-group">
         <select name="pref" class="form-control">
-          <option value="">選択してください</option>
+          <option value="">選択済み</option>
           <?php foreach($prefectures as $prefecture =>$menu) {print('<option value="'.$prefecture.'">'.$menu.'</option>');}?>
         </select>
       </div>
@@ -159,6 +180,9 @@ $count = count($places[$pref]);
       foreach($places[$pref] as $place => $reviews){
         echo ('<h4 class="media-heading" value="'.$reviews["name"].'">'.$reviews['name'].'</h4>');
         echo $reviews['detail'];
+        if($places[$pref]%2==0){
+          echo '<br>';
+        }
         }?>
       </div>
     </div>
